@@ -43,23 +43,23 @@ public class Polynomial {
             resultCoeffs[i] = coeffs[i] + rightPolynomial.getCoeffs()[i];
         }
         if (maxDegree == this.getDegree()) {
-            for(int i = minDegree + 1; i <= maxDegree; i++) {
+            for (int i = minDegree + 1; i <= maxDegree; i++) {
                 resultCoeffs[i] = this.getCoeffs()[i];
             }
         } else {
-            for(int i = minDegree + 1; i <= maxDegree; i++) {
+            for (int i = minDegree + 1; i <= maxDegree; i++) {
                 resultCoeffs[i] = rightPolynomial.getCoeffs()[i];
                 System.out.println(" thr " + resultCoeffs[i]);
             }
         }
         Polynomial result = new Polynomial(resultCoeffs);
-        return  result;
+        return result;
     }
 
     public Polynomial multiply(Polynomial rightPolynomial) {
         int resultDegree = this.getDegree() + rightPolynomial.getDegree();
         double[] resultCoeffs = new double[resultDegree + 1];
-        for (int i = 0; i <= this.getDegree(); i++ ) {
+        for (int i = 0; i <= this.getDegree(); i++) {
             for (int j = 0; j < rightPolynomial.getDegree(); j++) {
                 resultCoeffs[i + j] += this.getCoeffs()[i] * rightPolynomial.getCoeffs()[j];
             }
@@ -67,6 +67,25 @@ public class Polynomial {
         }
         Polynomial result = new Polynomial(resultCoeffs);
         return result;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + coeffs.hashCode();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Polynomial polynomial = (Polynomial) obj;
+        return polynomial.getCoeffs().equals(coeffs);
     }
 
 

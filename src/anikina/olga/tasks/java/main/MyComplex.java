@@ -114,4 +114,24 @@ public class MyComplex {
         this.setImag((-1) * this.getImag());
         return this;
     }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (int) real;
+        result = 31 * result + (int) imag;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        MyComplex myComplex = (MyComplex) obj;
+        return myComplex.getImag() == imag && myComplex.getReal() == real;
+    }
 }

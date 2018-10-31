@@ -58,4 +58,27 @@ public class Employee {
         return " ID : " + id + " , last name : "
                 + lastName + " , first name : " + firstName;
     }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + salary;
+        result = 31 * result + id;
+        result = 31 * result + firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Employee employee = (Employee)obj;
+        return employee.getId() == id && employee.salary == salary
+                && employee.firstName.equals(firstName) && employee.getLastName().equals(lastName);
+    }
 }

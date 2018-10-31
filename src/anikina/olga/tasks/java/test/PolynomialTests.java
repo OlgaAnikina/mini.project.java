@@ -34,4 +34,22 @@ public class PolynomialTests {
 
         assertEquals(4, polynom3.getDegree() );
     }
+
+    @Test
+    public void isEqualsPolynomialRightwhithThis() {
+        double[] coeffs2 = {2, 3};
+        Polynomial polynom2 = new Polynomial(coeffs2);
+
+        assertEquals(true, polynom2.equals(polynom2) );
+    }
+
+    @Test
+    public void isEqualsPolynomialRightWhithOther() {
+        double[] coeffs1 = {1, 3, 2, 4};
+        double[] coeffs2 = {2, 3};
+        Polynomial polynom1 = new Polynomial(coeffs1);
+        Polynomial polynom2 = new Polynomial(coeffs2);
+
+        assertEquals(false, polynom2.equals(polynom1) );
+    }
 }
