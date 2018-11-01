@@ -1,7 +1,7 @@
 package anikina.olga.tasks.java.test;
 
-import anikina.olga.tasks.java.main.Ball;
-import anikina.olga.tasks.java.main.Container;
+import anikina.olga.tasks.java.main.firstTask.Ball;
+import anikina.olga.tasks.java.main.firstTask.Container;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

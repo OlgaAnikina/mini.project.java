@@ -1,4 +1,4 @@
-package anikina.olga.tasks.java.main;
+package anikina.olga.tasks.java.main.firstTask;
 
 public class Circle {
     private double radius = 1.0;

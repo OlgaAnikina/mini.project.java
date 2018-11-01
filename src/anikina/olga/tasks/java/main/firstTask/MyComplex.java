@@ -1,4 +1,4 @@
-package anikina.olga.tasks.java.main;
+package anikina.olga.tasks.java.main.firstTask;
 
 public class MyComplex {
     private double real = 0.0;

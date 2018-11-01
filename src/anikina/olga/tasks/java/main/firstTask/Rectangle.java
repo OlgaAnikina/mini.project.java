@@ -1,4 +1,4 @@
-package anikina.olga.tasks.java.main;
+package anikina.olga.tasks.java.main.firstTask;
 
 public class Rectangle {
     private float length = 1.0f;

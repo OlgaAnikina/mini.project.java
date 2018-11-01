@@ -1,4 +1,4 @@
-package anikina.olga.tasks.java.main;
+package anikina.olga.tasks.java.main.secondTask;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class ArraySort {
     private Integer[] array;
+    private int[] arr;
 
 
     public ArraySort(final int size) {
@@ -22,6 +23,10 @@ public class ArraySort {
 
     public ArraySort(Integer[] array) {
         this.array = array;
+    }
+
+    public ArraySort(int[] arr) {
+        this.arr = arr;
     }
 
     public Integer[] getArray() {
@@ -50,12 +55,10 @@ public class ArraySort {
         ArraySort result = new ArraySort(this.array);
         for (int j = 1; j <= result.getArray().length - 1; j++) {
             int key = result.getArray()[j];
-
             for (int i = j - 1; i >= 0 && result.getArray()[i] < key; i--) {
                 result.getArray()[i + 1] = result.getArray()[i];
                 result.getArray()[i] = key;
             }
-
         }
         return result;
     }
@@ -63,6 +66,18 @@ public class ArraySort {
     public ArraySort defaultSort() {
         ArraySort result = new ArraySort(this.array);
         Arrays.sort(result.getArray(), Collections.reverseOrder());
+        return result;
+    }
+
+    public int[] insertSortToInt() {
+        int[] result = this.arr;
+        for (int j = 1; j <= result.length - 1; j++) {
+            int key = result[j];
+            for (int i = j - 1; i >= 0 && result[i] < key; i--) {
+                result[i + 1] = result[i];
+                result[i] = key;
+            }
+        }
         return result;
     }
 

@@ -1,9 +1,6 @@
-package anikina.olga.tasks.java.main;
+package anikina.olga.tasks.java.main.secondTask;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
 Here methods for task # 4 - 5(work with arrays)
@@ -11,6 +8,7 @@ Method's names mean which character of task.
  */
 public class OtherArrays {
     int[] arrayOfInt;
+    int n;
 
     private void aToDo() {
         int n = 100;
@@ -34,6 +32,13 @@ public class OtherArrays {
             result += arrayOfInt[i] + "  ";
         }
         System.out.println(result);
+    }
+    public int[] createArrays(int min, int max, int n){
+        arrayOfInt = new int[n];
+        for (int i = 0; i < n; i++) {
+            arrayOfInt[i] = getRandom(min, max);
+        }
+        return arrayOfInt;
     }
 
     public void bToDo() {
@@ -151,8 +156,92 @@ public class OtherArrays {
         }
     }
 
+    public void a5ToDo() {
+        int n = 8, m = 8, sum = 0, multiply = 1;
+        int[][] array = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                array[i][j] = getRandom(1, 99);
+                if ((i == j) || (j == n - i - 1)) {
+                    sum += array[i][j];
+                    multiply *= array[i][j];
+                }
+            }
+        }
+        System.out.println(toString(array));
+        System.out.println("Size of main and side diagonals:");
+        System.out.println("Sum = " + sum + " muptiply = " + multiply);
+    }
+
+    public void b5ToDo() {
+        int n = 8, m = 5, max = -100, maxI = -1, maxJ = -1;
+        int[][] array = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                array[i][j] = getRandom(-99, 99);
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                    maxI = i;
+                    maxJ = j;
+                }
+            }
+        }
+        System.out.println(toString(array));
+        System.out.println(" This matrix has maximal element = " + max + " on ( " + maxI + ", " + maxJ + " ).");
+    }
+
+    public void c5ToDo() {
+        Map<Integer, Integer> counter = new HashMap<>();
+        int n = 8, m = 5;
+        int multiply = 1;
+        int[][] array = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                array[i][j] = getRandom(-10, 10);
+                multiply *= array[i][j];
+            }
+            counter.put(i, Math.abs(multiply));
+            multiply = 1;
+        }
+        int rowOfMaxMultiply = Collections.max(counter.entrySet(),
+                Map.Entry.comparingByValue()).getKey();
+        int maxMultiply = counter.remove(rowOfMaxMultiply);
+        System.out.println(toString(array));
+        System.out.println(" This matrix hax maximal multiply  = " + maxMultiply + " on row = " + rowOfMaxMultiply);
+    }
+
+    public void d5ToDo() {
+        ArraySort result;
+        int n = 10, m = 7;
+        int[][] result1 = new int[n][m];
+        int[][] array = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                array[i][j] = getRandom(0, 100);
+            }
+            result = new ArraySort(array[i]);
+            result1[i] = result.insertSortToInt();
+        }
+        System.out.println("Before sorted :");
+        System.out.println(toString(array));
+        System.out.println("After sorted :");
+        System.out.println(toString(result1));
+    }
+
     private int getRandom(int min, int max) {
         return (min + (int) (Math.random() * ((max - min) + 1)));
+    }
+
+    private String toString(int[][] array) {
+        String result = "";
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[0].length; j++) {
+                result += array[i][j] + " ";
+            }
+            result += "\n";
+
+        }
+        return result;
     }
 
     @Override
@@ -164,7 +253,7 @@ public class OtherArrays {
         return result;
     }
 
-    public String toString(int[] array) {
+    private String toString(int[] array) {
         String result = "";
         for (int i = 0; i < array.length; i++) {
             result += array[i] + "  ";

@@ -1,4 +1,4 @@
-package anikina.olga.tasks.java.main;
+package anikina.olga.tasks.java.main.firstTask;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

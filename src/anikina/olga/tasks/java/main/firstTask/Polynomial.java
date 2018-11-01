@@ -1,6 +1,4 @@
-package anikina.olga.tasks.java.main;
-
-import java.sql.SQLOutput;
+package anikina.olga.tasks.java.main.firstTask;
 
 public class Polynomial {
     private double[] coeffs;

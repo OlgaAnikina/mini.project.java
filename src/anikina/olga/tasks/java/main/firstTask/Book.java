@@ -1,6 +1,4 @@
-package anikina.olga.tasks.java.main;
-
-import anikina.olga.tasks.java.main.Author;
+package anikina.olga.tasks.java.main.firstTask;
 
 import java.util.HashSet;
 import java.util.Iterator;

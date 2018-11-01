@@ -1,6 +1,4 @@
-package anikina.olga.tasks.java.main;
-
-import org.junit.Test;
+package anikina.olga.tasks.java.main.firstTask;
 
 public class Author {
     private String name;

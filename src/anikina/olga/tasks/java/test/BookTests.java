@@ -1,7 +1,7 @@
 package anikina.olga.tasks.java.test;
 
-import anikina.olga.tasks.java.main.Author;
-import anikina.olga.tasks.java.main.Book;
+import anikina.olga.tasks.java.main.firstTask.Author;
+import anikina.olga.tasks.java.main.firstTask.Book;
 import org.junit.Test;
 
 import java.util.*;

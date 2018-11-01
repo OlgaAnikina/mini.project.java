@@ -1,4 +1,4 @@
-package anikina.olga.tasks.java.main;
+package anikina.olga.tasks.java.main.secondTask;
 
 public class Printer {
     public static void main(String[] args) {
@@ -63,23 +63,51 @@ public class Printer {
         System.out.println("\n\n");
         characterImages.printZero();
 
-        //Task 3 linear array
-        System.out.println("\n\n Task 3. Work with Arrays");
-        System.out.println("\n 3.a Direct Order array with odd numbers");
+        //Task 4 linear array
+        System.out.println("\n\n Task 4. Work with linear arrays");
+        System.out.println("\n 4.a Direct Order array with odd numbers");
         OtherArrays otherArrays = new OtherArrays();
         otherArrays.aDirectOrder();
-        System.out.println("\n 3.a Reverse Order array with odd numbers");
+        System.out.println("\n 4.a Reverse Order array with odd numbers");
         otherArrays.aReverseOrder();
-        System.out.println("\n\n 3.b ");
+        System.out.println("\n\n 4.b ");
         otherArrays.bToDo();
-        System.out.println("\n\n 3.c");
+        System.out.println("\n\n 4.c");
         otherArrays.cToDo();
-        System.out.println("\n\n 3.d ");
+        System.out.println("\n\n 4.d ");
         otherArrays.dToDo();
-        System.out.println("\n\n 3.e ");
+        System.out.println("\n\n 4.e ");
         otherArrays.eToDo();
-        System.out.println("\n\n 3.f ");
+        System.out.println("\n\n 4.f ");
         otherArrays.fToDo();
+
+        //Task 5 matrix
+        System.out.println("\n\n Task 5. Work with two-dimensional arrays");
+        System.out.println("\n\n 5.a ");
+        otherArrays.a5ToDo();
+        System.out.println("\n\n 5.b ");
+        otherArrays.b5ToDo();
+        System.out.println("\n\n 5.c ");
+        otherArrays.c5ToDo();
+        System.out.println("\n\n 5.d ");
+        otherArrays.d5ToDo();
+
+        //Task 6 work with constraction
+        System.out.println("\n\n Task 6. Work with construction");
+        System.out.println("\n6.1");
+        Constraction constraction = new Constraction();
+        System.out.println("If - else construction:");
+        long startTime = System.nanoTime();
+        constraction.elseIf(Constraction.Poets.Fet);
+        long finishTime = System.nanoTime() - startTime;
+        System.out.println(" If - else work  = "  + finishTime);
+        System.out.println("Switch construction:");
+        startTime = System.nanoTime();
+        constraction.switchConstrustion(Constraction.Poets.Fet);
+        finishTime = System.nanoTime() - startTime;
+        System.out.println("Switch work  = " + finishTime);
+        System.out.println("\n\n6.2");
+        constraction.calculateForArray();
 
 
     }

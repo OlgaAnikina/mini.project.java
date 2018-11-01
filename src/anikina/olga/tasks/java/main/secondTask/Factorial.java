@@ -1,4 +1,4 @@
-package anikina.olga.tasks.java.main;
+package anikina.olga.tasks.java.main.secondTask;
 
 public class Factorial {
     private int n;

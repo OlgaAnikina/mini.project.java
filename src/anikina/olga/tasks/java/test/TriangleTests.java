@@ -1,7 +1,7 @@
 package anikina.olga.tasks.java.test;
 
-import anikina.olga.tasks.java.main.MyPoint;
-import anikina.olga.tasks.java.main.MyTriangle;
+import anikina.olga.tasks.java.main.firstTask.MyPoint;
+import anikina.olga.tasks.java.main.firstTask.MyTriangle;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
