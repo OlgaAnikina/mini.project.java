@@ -37,7 +37,6 @@ public class MyListVSDefault {
         long finishTimeOfInsertInDefaultList = System.nanoTime() - startTimeOfInsertInDefaultList;
         timeOfInsertInMyCollection += finishTimeOfInsertInMyList;
         timeOfInsertInDefaultCollection += finishTimeOfInsertInDefaultList;
-
     }
 
     private void compareDelete() {

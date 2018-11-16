@@ -46,14 +46,14 @@ public class CompareMap {
         for (int i = 10000; i < 1000000; i++) {
             linkedHashMap.put(randomChar(), i);
         }
-        long finishTimeOfInsertInLinkedHashMAp = System.nanoTime() - startTimeOfInsertInLinkedHashMAp;
+        long finishTimeOfInsertInLinkedHashMap = System.nanoTime() - startTimeOfInsertInLinkedHashMAp;
         long startTimeOfInsertTreeMap = System.nanoTime();
         for (int i = 10000; i < 1000000; i++) {
             hashMap.put(randomChar(), i);
         }
         long finishTimeOfInsertTreeMAp = System.nanoTime() - startTimeOfInsertTreeMap;
         timeOfInsertInHashMap += finishTimeOfInsertHashMap;
-        timeOfInsertInLinkedHashMap += finishTimeOfInsertInLinkedHashMAp;
+        timeOfInsertInLinkedHashMap += finishTimeOfInsertInLinkedHashMap;
         timeOfInsertInTreeMap += finishTimeOfInsertTreeMAp;
 
     }
@@ -65,18 +65,16 @@ public class CompareMap {
 
         }
         long finishTimeOfHashMap = System.nanoTime() - startTimeOfHashMap;
-        long startTimeOfLinkedhashMap = System.nanoTime();
+        long startTimeOfLinkedHashMap = System.nanoTime();
         for (int i = 0; i < 1000; i++) {
-            int size = linkedHashMap.size();
             linkedHashMap.remove(randomChar());
         }
-        long finishTimeOfLinkedHashMap = System.nanoTime() - startTimeOfLinkedhashMap;
-        long startTimeOfDeleteTreeSet = System.nanoTime();
+        long finishTimeOfLinkedHashMap = System.nanoTime() - startTimeOfLinkedHashMap;
+        long startTimeOfDeleteTreeMap = System.nanoTime();
         for (int i = 10000; i < 1000000; i++) {
-            int size = treeMap.size();
             treeMap.remove(randomChar());
         }
-        long finishTimeOfDeleteTreeMap = System.nanoTime() - startTimeOfDeleteTreeSet;
+        long finishTimeOfDeleteTreeMap = System.nanoTime() - startTimeOfDeleteTreeMap;
         timeOfDeleteInLinkedHashMap += finishTimeOfLinkedHashMap;
         timeOfDeleteInHashMap += finishTimeOfHashMap;
         timeOfDeleteInTreeMap += finishTimeOfDeleteTreeMap;

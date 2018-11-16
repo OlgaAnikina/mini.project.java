@@ -25,7 +25,6 @@ public class CompareSets {
             hashSet.add(random.nextInt(100));
             linkedHashSet.add(random.nextInt(100));
             treeSet.add(random.nextInt(100));
-
         }
     }
 
@@ -58,12 +57,12 @@ public class CompareSets {
             hashSet.remove(size - 1);
         }
         long finishTimeOfHashSet = System.nanoTime() - startTimeOfHashSet;
-        long startTimeOfLinkedList = System.nanoTime();
+        long startTimeOfLinkedHashSet = System.nanoTime();
         for (int i = 0; i < 1000; i++) {
             int size = linkedHashSet.size();
             linkedHashSet.remove(size - 1);
         }
-        long finishTimeOfLinkedHashSet = System.nanoTime() - startTimeOfLinkedList;
+        long finishTimeOfLinkedHashSet = System.nanoTime() - startTimeOfLinkedHashSet;
         long startTimeOfDeleteTreeSet = System.nanoTime();
         for (int i = 10000; i < 1000000; i++) {
             int size = treeSet.size();
